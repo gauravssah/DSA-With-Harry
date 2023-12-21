@@ -15,19 +15,18 @@ void traversLinkedList(struct Node *head)
         cout << "Data In Node : " << head->data << endl;
         head = head->next;
     }
+
     cout << "Now reversing" << endl;
 
-    if (head == NULL)
+    // Go back to the last node
+    while (head->pre != NULL)
     {
         cout << "Data : " << head->data << endl;
-        head->pre;
-
-        while (head->pre != NULL)
-        {
-            cout << "Data : " << head->data << endl;
-            head->pre;
-        }
+        head = head->pre;
     }
+
+    // Print the data of the last node
+    cout << "Data : " << head->data << endl;
 }
 
 int main()
