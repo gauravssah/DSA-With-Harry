@@ -16,18 +16,37 @@ void traversLinkedList(struct Node *head)
         head = head->next;
     }
 
-    cout << "Now reversing" << endl;
+    // cout << "Now reversing" << endl;
 
-    // Go back to the last node
-    while (head->pre != NULL)
+    // // Go back to the last node
+    // while (head->pre != NULL)
+    // {
+    //     cout << "Data : " << head->data << endl;
+    //     head = head->pre;
+    // }
+
+    // // Print the data of the last node
+    // cout << "Data : " << head->data << endl;
+};
+
+void reverseLinkedList(struct Node *head)
+{
+    struct Node *ptr;
+    ptr = head;
+    // cout << ptr << endl;
+    while (ptr != NULL)
     {
-        cout << "Data : " << head->data << endl;
-        head = head->pre;
+        // cout << "inside while " << ptr << endl;
+        ptr = ptr->next;
     }
 
-    // Print the data of the last node
-    cout << "Data : " << head->data << endl;
-}
+    if (ptr == NULL)
+    {
+        cout << "inside if :" << endl;
+        ptr = ptr->pre;
+        cout << "Inside if :" << ptr << endl;
+    }
+};
 
 int main()
 {
@@ -68,7 +87,9 @@ int main()
     fivth->data = 28;
     fivth->next = NULL;
 
-    traversLinkedList(head);
+    // traversLinkedList(head);
+
+    // reverseLinkedList(head);
 
     return 0;
 }
